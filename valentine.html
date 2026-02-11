@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For Rohan ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff4d6d, #ff85a2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      color: white;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 350px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+      position: relative;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 8px;
+      position: relative;
+    }
+
+    .yes {
+      background: #ff1e56;
+      color: white;
+    }
+
+    .no {
+      background: #444;
+      color: white;
+      position: absolute;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    iframe {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <!-- Replace with your photo file -->
+    <img src="your-photo.jpg" alt="Us ❤️">
+
+    <h1>Rohan 💖</h1>
+    <p>Will you be my Valentine?</p>
+
+    <button class="yes" onclick="sayYes()">Yes 💘</button>
+    <button class="no" id="noBtn">No 🙈</button>
+
+    <div id="message"></div>
+  </div>
+
+  <!-- Song -->
+  <iframe
+    id="music"
+    src="https://www.youtube.com/embed/OpQFFLBMEPI?autoplay=1&loop=1&playlist=OpQFFLBMEPI"
+    allow="autoplay">
+  </iframe>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    function sayYes() {
+      document.getElementById("message").innerHTML =
+        "Yayyy!!! 💕 You just made me the happiest girl 😘<br>Happy Valentine’s Day, my love 💖";
+
+      confetti({
+        particleCount: 250,
+        spread: 120,
+        origin: { y: 0.6 }
+      });
+
+      document.getElementById("music").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
